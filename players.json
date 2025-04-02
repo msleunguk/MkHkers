@@ -1,0 +1,23 @@
+[
+  {
+    "number": 7,
+    "name_zh": "張三",
+    "name_en": "Cheung Sam",
+    "position": "前鋒",
+    "photo": "photos/cheung_sam.jpg"
+  },
+  {
+    "number": 10,
+    "name_zh": "李四",
+    "name_en": "Lee See",
+    "position": "中場",
+    "photo": "photos/lee_see.jpg"
+  },
+  {
+    "number": 1,
+    "name_zh": "王五",
+    "name_en": "Wong Ng",
+    "position": "守門員",
+    "photo": "photos/wong_ng.jpg"
+  }
+]
