@@ -1,24 +1,70 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MK HKers 足球隊</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+<style>
+  .active > div {
+    border: 2px solid var(--mkhker-primary);
+  }
+</style>
 </head>
 <body>
   <header class="text-white p-3 mb-4">
     <div class="container d-flex align-items-center justify-content-between">
-      <img src="MkHKers_logo.png" alt="MK HKER Logo" height="60">
+      <img src="images/MkHKers_logo.png" alt="MK HKers Logo" height="80px" />
       <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-white" href="index.html">主頁 / Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="about.html">關於我們 / About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="players.html">球員名單 / Players</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="matches.html">比賽資訊 / Matches</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="contact.html">聯絡我們 / Contact</a></li>
-        </ul>
+        <div class="d-flex flex-wrap gap-3 justify-content-end">
+          <a href="index.html" class="text-decoration-none active">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
+              <div class="me-2">
+                <img src="images/pitchIcon.png" alt="Home Icon" style="height: 60px; width: 60px" />
+              </div>
+              <div class="text-dark" style="line-height: 1.1; font-weight: bold">
+                主頁<br /><small style="font-weight: normal; font-style: italic">Home</small>
+              </div>
+            </div>
+          </a>
+          <a href="about.html" class="text-decoration-none">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
+              <div class="me-2">
+                <img src="images/football_Icon.png" alt="About Icon" style="height: 40px; width: 40px" />
+              </div>
+              <div class="text-dark" style="line-height: 1.1; font-weight: bold">
+                關於我們<br /><small style="font-weight: normal; font-style: italic">About</small>
+              </div>
+            </div>
+          </a>
+          <a href="players.html" class="text-decoration-none">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
+              <div class="me-2">
+                <img src="images/player_Icon.png" alt="Players Icon" style="height: 50px; width: 50px" />
+              </div>
+              <div class="text-dark" style="line-height: 1.1; font-weight: bold">
+                球員名單<br /><small style="font-weight: normal; font-style: italic">Players</small>
+              </div>
+            </div>
+          </a>
+          <a href="matches.html" class="text-decoration-none">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
+              <div class="me-2" style="font-size: 1.5rem">📅</div>
+              <div class="text-dark" style="line-height: 1.1; font-weight: bold">
+                比賽資訊<br /><small style="font-weight: normal; font-style: italic">Matches</small>
+              </div>
+            </div>
+          </a>
+          <a href="contact.html" class="text-decoration-none">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
+              <div class="me-2" style="font-size: 1.5rem">📞</div>
+              <div class="text-dark" style="line-height: 1.1; font-weight: bold">
+                聯絡我們<br /><small style="font-weight: normal; font-style: italic">Contact</small>
+              </div>
+            </div>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -29,7 +75,7 @@
     <a class="btn btn-primary mt-3" href="https://www.facebook.com/profile.php?id=100093044896919" target="_blank">前往 Facebook 專頁</a>
   </main>
   <footer class="bg-light text-center text-muted py-3 mt-5">
-    <p>&copy; 2025 MK HKER Football Team. All rights reserved.</p>
+    <p>&copy; 2025 MK HKers Football Team. All rights reserved.</p>
   </footer>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
