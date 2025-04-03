@@ -1,55 +1,120 @@
 <header class="text-white p-3 mb-4">
-  <div class="container d-flex align-items-center justify-content-between">
-    <img src="images/MkHKers_logo.png" alt="MK HKers Logo" height="80px" />
-    <nav>
-      <div class="d-flex flex-wrap gap-3 justify-content-end">
-        <a href="index.html" class="text-decoration-none" data-page="index.html">
-          <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
-            <div class="me-2">
-              <img src="images/pitchIcon.png" alt="Home Icon" style="height: 60px; width: 60px" />
+  <div class="container">
+    <!-- Desktop layout - logo and menu in same line (medium screens and above) -->
+    <div class="d-none d-md-flex align-items-center justify-content-between">
+      <img src="images/MkHKers_logo.png" alt="MK HKers Logo" class="responsive-logo" />
+      
+      <!-- Desktop menu -->
+      <nav>
+        <div class="d-flex flex-wrap gap-2 gap-xl-3 justify-content-end">
+          <a href="index.html" class="text-decoration-none" data-page="index.html">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm menu-item">
+              <div class="me-2 icon-container home-icon">
+                <img src="images/home_Icon.png" alt="Home Icon" class="icon-image" style="max-height: 60px; max-width: 60px;" />
+              </div>
+              <div class="text-dark menu-text">
+                主頁<br /><small>Home</small>
+              </div>
             </div>
-            <div class="text-dark" style="line-height: 1.1; font-weight: bold">
-              主頁<br /><small style="font-weight: normal; font-style: italic">Home</small>
+          </a>
+          <a href="about.html" class="text-decoration-none" data-page="about.html">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm menu-item">
+              <div class="me-2 icon-container">
+                <img src="images/football_Icon.png" alt="About Icon" class="icon-image" style="max-height: 40px; max-width: 40px;" />
+              </div>
+              <div class="text-dark menu-text">
+                關於我們<br /><small>About Us</small>
+              </div>
             </div>
+          </a>
+          <a href="players.html" class="text-decoration-none" data-page="players.html">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm menu-item">
+              <div class="me-2 icon-container">
+                <img src="images/player_icon.png" alt="Players Icon" class="icon-image" style="max-height: 50px; max-width: 50px;" />
+              </div>
+              <div class="text-dark menu-text">
+                球員名單<br /><small>Players</small>
+              </div>
+            </div>
+          </a>
+          <a href="matches.html" class="text-decoration-none" data-page="matches.html">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm menu-item">
+              <div class="me-2 icon-container">
+                <img src="images/matches_Icon.png" alt="Matches Icon" class="icon-image" style="max-height: 50px; max-width: 50px;" />
+              </div>
+              <div class="text-dark menu-text">
+                比賽資訊<br /><small>Matches</small>
+              </div>
+            </div>
+          </a>
+          <a href="contact.html" class="text-decoration-none" data-page="contact.html">
+            <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm menu-item">
+              <div class="me-2 icon-container">
+                <img src="images/contact_icon.png" alt="Contact Icon" class="icon-image" style="max-height: 50px; max-width: 50px;" />
+              </div>
+              <div class="text-dark menu-text">
+                聯絡我們<br /><small>Contact Us</small>
+              </div>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </div>
+    
+    <!-- Mobile layout - logo and hamburger button -->
+    <div class="d-flex d-md-none align-items-center justify-content-between">
+      <img src="images/MkHKers_logo.png" alt="MK HKers Logo" height="80px" />
+      
+      <!-- Hamburger menu button (shown only on small screens) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile menu (collapsible) -->
+    <div class="collapse navbar-collapse mt-3" id="navbarCollapse">
+      <div class="d-md-none">
+        <a href="index.html" class="text-decoration-none mobile-menu-item d-block mb-2 p-2 rounded" data-page="index.html">
+          <div class="d-flex align-items-center">
+            <div class="me-3 mobile-icon-container">
+              <img src="images/home_Icon.png" alt="Home Icon" class="icon-image" style="max-height: 40px; max-width: 40px;" />
+            </div>
+            <span class="text-dark fw-bold">主頁 / Home</span>
           </div>
         </a>
-        <a href="about.html" class="text-decoration-none" data-page="about.html">
-          <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
-            <div class="me-2">
-              <img src="images/football_Icon.png" alt="About Icon" style="height: 40px; width: 40px" />
+        <a href="about.html" class="text-decoration-none mobile-menu-item d-block mb-2 p-2 rounded" data-page="about.html">
+          <div class="d-flex align-items-center">
+            <div class="me-3 mobile-icon-container">
+              <img src="images/football_Icon.png" alt="About Icon" class="icon-image" style="max-height: 30px; max-width: 30px;" />
             </div>
-            <div class="text-dark" style="line-height: 1.1; font-weight: bold">
-              關於我們<br /><small style="font-weight: normal; font-style: italic">About</small>
-            </div>
+            <span class="text-dark fw-bold">關於我們 / About Us</span>
           </div>
         </a>
-        <a href="players.html" class="text-decoration-none" data-page="players.html">
-          <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
-            <div class="me-2">
-              <img src="images/player_icon.png" alt="Players Icon" style="height: 50px; width: 50px" />
+        <a href="players.html" class="text-decoration-none mobile-menu-item d-block mb-2 p-2 rounded" data-page="players.html">
+          <div class="d-flex align-items-center">
+            <div class="me-3 mobile-icon-container">
+              <img src="images/player_icon.png" alt="Players Icon" class="icon-image" style="max-height: 35px; max-width: 35px;" />
             </div>
-            <div class="text-dark" style="line-height: 1.1; font-weight: bold">
-              球員名單<br /><small style="font-weight: normal; font-style: italic">Players</small>
-            </div>
+            <span class="text-dark fw-bold">球員名單 / Players</span>
           </div>
         </a>
-        <a href="matches.html" class="text-decoration-none" data-page="matches.html">
-          <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
-            <div class="me-2" style="font-size: 1.5rem">📅</div>
-            <div class="text-dark" style="line-height: 1.1; font-weight: bold">
-              比賽資訊<br /><small style="font-weight: normal; font-style: italic">Matches</small>
+        <a href="matches.html" class="text-decoration-none mobile-menu-item d-block mb-2 p-2 rounded" data-page="matches.html">
+          <div class="d-flex align-items-center">
+            <div class="me-3 mobile-icon-container">
+              <img src="images/matches_Icon.png" alt="Matches Icon" class="icon-image" style="max-height: 35px; max-width: 35px;" />
             </div>
+            <span class="text-dark fw-bold">比賽資訊 / Matches</span>
           </div>
         </a>
-        <a href="contact.html" class="text-decoration-none" data-page="contact.html">
-          <div class="d-flex align-items-center p-2 px-3 rounded shadow-sm" style="background-color: var(--mkhker-header-bg); min-width: 150px">
-            <div class="me-2" style="font-size: 1.5rem">📞</div>
-            <div class="text-dark" style="line-height: 1.1; font-weight: bold">
-              聯絡我們<br /><small style="font-weight: normal; font-style: italic">Contact</small>
+        <a href="contact.html" class="text-decoration-none mobile-menu-item d-block mb-2 p-2 rounded" data-page="contact.html">
+          <div class="d-flex align-items-center">
+            <div class="me-3 mobile-icon-container">
+              <img src="images/contact_icon.png" alt="Contact Icon" class="icon-image" style="max-height: 35px; max-width: 35px;" />
             </div>
+            <span class="text-dark fw-bold">聯絡我們 / Contact Us</span>
           </div>
         </a>
       </div>
-    </nav>
+    </div>
   </div>
 </header>

@@ -1,23 +1,261 @@
 [
   {
+    "number": 0,
+    "name_zh": "",
+    "name_en": "Bo",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 2,
+    "name_zh": "",
+    "name_en": "Hong Nick",
+    "position": "DF",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 3,
+    "name_zh": "",
+    "name_en": "Kenny",
+    "position": "AM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 4,
+    "name_zh": "",
+    "name_en": "Fergus",
+    "position": "FW",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 5,
+    "name_zh": "",
+    "name_en": "Hugh",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 6,
+    "name_zh": "",
+    "name_en": "Nero Ng",
+    "position": "DF",
+    "photo": "images/dummy.png"
+  },
+  {
     "number": 7,
-    "name_zh": "張三",
-    "name_en": "Cheung Sam",
-    "position": "前鋒",
-    "photo": "photos/cheung_sam.jpg"
+    "name_zh": "",
+    "name_en": "Ernest",
+    "position": "DF",
+    "photo": "images/dummy.png"
   },
   {
-    "number": 10,
-    "name_zh": "李四",
-    "name_en": "Lee See",
-    "position": "中場",
-    "photo": "photos/lee_see.jpg"
+    "number": 9,
+    "name_zh": "",
+    "name_en": "Jeff",
+    "position": "FW",
+    "photo": "images/dummy.png"
   },
   {
-    "number": 1,
-    "name_zh": "王五",
-    "name_en": "Wong Ng",
-    "position": "守門員",
-    "photo": "photos/wong_ng.jpg"
+    "number": 11,
+    "name_zh": "",
+    "name_en": "Bentley",
+    "position": "FW",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 12,
+    "name_zh": "",
+    "name_en": "Fanky",
+    "position": "AM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 13,
+    "name_zh": "",
+    "name_en": "Anson",
+    "position": "AM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 14,
+    "name_zh": "",
+    "name_en": "Daniel",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 15,
+    "name_zh": "",
+    "name_en": "Adrian Wong",
+    "position": "DF",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 16,
+    "name_zh": "",
+    "name_en": "Willy",
+    "position": "GK",
+    "photo": "images/dummyGK.png"
+  },
+  {
+    "number": 17,
+    "name_zh": "",
+    "name_en": "Choyau",
+    "position": "FW",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 18,
+    "name_zh": "",
+    "name_en": "Sam",
+    "position": "FW",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 19,
+    "name_zh": "",
+    "name_en": "Terry",
+    "position": "DF",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 20,
+    "name_zh": "",
+    "name_en": "Uncle LAM",
+    "position": "GK",
+    "photo": "images/dummyGK.png"
+  },
+  {
+    "number": 22,
+    "name_zh": "",
+    "name_en": "William",
+    "position": "DF",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 23,
+    "name_zh": "",
+    "name_en": "Adrian Ma",
+    "position": "AM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 25,
+    "name_zh": "",
+    "name_en": "Sean",
+    "position": "AM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 26,
+    "name_zh": "",
+    "name_en": "Chiu",
+    "position": "FW",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 27,
+    "name_zh": "",
+    "name_en": "Frankie",
+    "position": "DM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 28,
+    "name_zh": "",
+    "name_en": "Wayne",
+    "position": "DM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 30,
+    "name_zh": "",
+    "name_en": "BEN",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 31,
+    "name_zh": "",
+    "name_en": "Jeremy",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 38,
+    "name_zh": "",
+    "name_en": "Jim",
+    "position": "DF",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 41,
+    "name_zh": "",
+    "name_en": "Norman",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 42,
+    "name_zh": "",
+    "name_en": "Sherman",
+    "position": "AM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 44,
+    "name_zh": "",
+    "name_en": "Amos",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 50,
+    "name_zh": "",
+    "name_en": "HonYinSee",
+    "position": "FW",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 79,
+    "name_zh": "",
+    "name_en": "Kenji",
+    "position": "AM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 84,
+    "name_zh": "",
+    "name_en": "Andy",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 85,
+    "name_zh": "",
+    "name_en": "Marcio",
+    "position": "DF",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 90,
+    "name_zh": "",
+    "name_en": "Benson",
+    "position": "CM",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 97,
+    "name_zh": "",
+    "name_en": "Jack",
+    "position": "DF",
+    "photo": "images/dummy.png"
+  },
+  {
+    "number": 19,
+    "name_zh": "",
+    "name_en": "DENNIS",
+    "position": "CM",
+    "photo": "images/dummy.png"
   }
 ]

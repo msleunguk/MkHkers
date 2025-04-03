@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>聯絡我們 | MK HKers</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<!-- Header will be loaded here -->
+	<div id="header-placeholder"></div>
+
+	<main class="container my-5">
+		<h1 class="text-center mb-5">聯絡我們 <small class="text-muted">/ Contact Us</small></h1>
+		
+		<!-- Map Section - Moved to top -->
+		<div class="mb-5">
+			<div class="card shadow-sm">
+				<div class="card-body p-0">
+					<h3 class="card-title p-4 mb-0 border-bottom">我們的主場 <small class="text-muted">/ Our Home Ground</small></h3>
+					<!-- Updated Google Maps iframe with the provided code -->
+					<div class="ratio ratio-16x9" style="min-height: 400px;">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1566.6065905839341!2d-0.7763683725356436!3d52.03664095842473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877000b9ba2e1cb%3A0x2ed330d3c57482b6!2sSport%20Central!5e1!3m2!1sen!2suk!4v1743638909458!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<!-- Contact Information -->
+			<div class="col-lg-5 mb-4">
+				<div class="card shadow-sm h-100">
+					<div class="card-body">
+						<h3 class="card-title border-bottom pb-3 mb-4">聯絡資料 <small class="text-muted">/ Contact Info</small></h3>
+						
+						<div class="d-flex align-items-start mb-4">
+							<div class="me-3 text-primary">
+								<i class="fas fa-map-marker-alt fa-2x"></i>
+							</div>
+							<div>
+								<h5>主場 / Home Ground</h5>
+								<p class="mb-0">Elder Gate, Milton Keynes MK9 1EN</p>
+							</div>
+						</div>
+						
+						<div class="d-flex align-items-start mb-4">
+							<div class="me-3 text-primary">
+								<i class="fas fa-envelope fa-2x"></i>
+							</div>
+							<div>
+								<h5>電郵 / Email</h5>
+								<p class="mb-0">info@mkhkers.com</p>
+							</div>
+						</div>
+						
+						<div class="d-flex align-items-start mb-4">
+							<div class="me-3 text-primary">
+								<i class="fas fa-phone fa-2x"></i>
+							</div>
+							<div>
+								<h5>電話 / Phone</h5>
+								<p class="mb-0">+44 XXXX XXXXXX</p>
+							</div>
+						</div>
+						
+						<h4 class="mt-5 mb-3">社交媒體 / Social Media</h4>
+						<div class="d-flex gap-3">
+							<a href="#" class="text-decoration-none">
+								<div class="bg-primary text-white rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+									<i class="fab fa-facebook-f fa-lg"></i>
+								</div>
+							</a>
+							<a href="#" class="text-decoration-none">
+								<div class="bg-info text-white rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+									<i class="fab fa-instagram fa-lg"></i>
+								</div>
+							</a>
+							<a href="#" class="text-decoration-none">
+								<div class="bg-danger text-white rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+									<i class="fab fa-youtube fa-lg"></i>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Contact Form -->
+			<div class="col-lg-7 mb-4">
+				<div class="card shadow-sm">
+					<div class="card-body">
+						<h3 class="card-title border-bottom pb-3 mb-4">聯絡表格 <small class="text-muted">/ Contact Form</small></h3>
+						
+							<!-- 移除了Google Form，添加占位提示 -->
+							<div class="text-center p-5">
+								<div class="mb-4">
+									<i class="fas fa-envelope-open-text fa-4x text-primary"></i>
+								</div>
+								<h4 class="mb-3">聯絡表格即將推出</h4>
+								<p class="text-muted">我們目前正在設置Google表單以收集您的查詢。<br>敬請期待！</p>
+								<p class="mt-4">暫時請通過我們的電子郵件或電話與我們聯繫。</p>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="bg-dark text-white text-center py-4 mt-5">
+		<div class="container">
+			<p class="mb-0">© 2023 MK HKers. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#header-placeholder").load("header.html", function() {
+				// Highlight current page in menu
+				const currentPage = location.href.split("/").slice(-1)[0];
+				$(`a[data-page="${currentPage}"]`).addClass("active");
+				
+				// Initialize Bootstrap components if needed
+				const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+				tooltipTriggerList.map(function (tooltipTriggerEl) {
+					return new bootstrap.Tooltip(tooltipTriggerEl);
+				});
+			});
+			
+				// 移除了原來的表單處理代碼，因為 Google Form 會自行處理提交
+		});
+	</script>
+</body>
+</html>

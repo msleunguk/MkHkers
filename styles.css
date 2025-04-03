@@ -1,42 +1,251 @@
-
 :root {
   --mkhker-primary: #F9C536;
   --mkhker-dark: #000000;
   --mkhker-light: #f8f9fa;
   --mkhker-header-bg: #FCE88A;
 }
+
 body {
   background-color: #ffffff;
   color: #000;
 }
+
 header {
   background-color: var(--mkhker-header-bg);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .nav-link {
   color: #000 !important;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
 }
+
 .nav-link.active {
   text-decoration: underline;
   color: #333 !important;
 }
+
 .nav-link:hover {
   color: var(--mkhker-primary) !important;
   text-decoration: underline;
 }
+
 .btn-primary {
   background-color: var(--mkhker-primary);
   border-color: var(--mkhker-primary);
   color: #000;
   font-weight: bold;
 }
+
 .btn-primary:hover {
   background-color: #e0b32f;
   border-color: #e0b32f;
 }
+
 footer {
   background-color: var(--mkhker-dark);
   color: var(--mkhker-light);
+}
+
+/* Styles for navigation menu items */
+.menu-item {
+  background-color: var(--mkhker-header-bg);
+  min-width: 150px;
+  height: 80px;
+}
+
+.menu-item:hover {
+  border: 2px solid var(--mkhker-primary);
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.menu-text {
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+.menu-text small {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.emoji-icon {
+  font-size: 2rem;
+}
+
+/* Active state for navigation items */
+.active > div {
+  border: 2px solid var(--mkhker-primary);
+}
+
+/* Player card styles */
+.player-card {
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Hamburger menu button styles */
+.navbar-toggler {
+  border: none;
+  background-color: var(--mkhker-header-bg);
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(249, 197, 54, 0.5);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile menu styles */
+.mobile-menu-item {
+  background-color: var(--mkhker-header-bg);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-item:hover {
+  background-color: #f5d56a;
+}
+
+.mobile-icon-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-icon-mobile {
+  font-size: 1.5rem;
+}
+
+/* Active state for mobile menu items */
+.mobile-menu-item.active {
+  border-left: 5px solid var(--mkhker-primary);
+  background-color: #fdf6d5;
+}
+
+/* Responsive logo sizing */
+.responsive-logo {
+  height: 100px;
+}
+
+/* Team photo styling */
+.team-photo-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-photo {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.team-photo:hover {
+  transform: scale(1.01);
+}
+
+/* Responsive menu adjustments */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .menu-item {
+    min-width: 100px;
+    height: 65px;
+    padding: 0.25rem 0.5rem !important;
+  }
+  
+  .icon-container {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.25rem !important;
+  }
+  
+  /* 調整主頁按鈕的特殊處理 */
+  a[href="index.html"] .icon-container {
+    width: 55px;
+    height: 22px;
+  }
+  
+  a[href="index.html"] .icon-container img {
+    max-height: 22px;
+    max-width: 22px;
+  }
+  
+  a[href="index.html"] .menu-item {
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
+  }
+  
+  .menu-text {
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+  
+  .menu-text small {
+    font-size: 0.65rem;
+  }
+  
+  .emoji-icon {
+    font-size: 1.5rem;
+  }
+  
+  .responsive-logo {
+    height: 70px;
+  }
+  
+  /* 減少間隙, 讓選單項目更緊湊 */
+  header .gap-2 {
+    gap: 0.3rem !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .menu-item {
+    min-width: 120px;
+    height: 70px;
+  }
+  
+  .icon-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .menu-text {
+    font-size: 0.85rem;
+  }
+  
+  .emoji-icon {
+    font-size: 1.75rem;
+  }
+  
+  .responsive-logo {
+    height: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu-item {
+    min-width: 150px;
+    height: 80px;
+  }
 }

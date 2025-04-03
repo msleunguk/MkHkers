@@ -6,83 +6,189 @@
   <title>球員名單 - MK HKER</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  
-  
+  <style>
+    .player-card {
+      transition: transform 0.3s;
+      height: 100%;
+    }
+    .player-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .player-number {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #e74c3c;
+    }
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
+    @media (min-width: 768px) {
+      .card-img-top {
+        height: 280px;
+      }
+    }
+    .position-header {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e74c3c;
+      color: #2c3e50;
+    }
+  </style>
 </head>
 <body>
-  <header class="text-black p-3 mb-4" style="background-color: var(--mkhker-header-bg);">
-    <div class="container d-flex align-items-center justify-content-between">
-      <img src="MkHkers_logo.png" alt="MK HKER Logo" height="60">
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-white" href="index.html">主頁 / Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="about.html">關於我們 / About</a></li>
-          <li class="nav-item"><a class="nav-link text-white active" href="players.html">球員名單 / Players</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="matches.html">比賽資訊 / Matches</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="contact.html">聯絡我們 / Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main class="container">
     <h1 class="mb-4 text-center">球員名單 / Player List</h1>
-    <div class="row" id="player-list">
-      <!-- Cards 將由 jQuery 動態加入 -->
+    
+    <!-- 分位置顯示球員 -->
+    <div id="goalkeeper-section">
+      <h2 class="position-header">守門員 / Goalkeepers</h2>
+      <div class="row" id="goalkeeper-list"></div>
+    </div>
+    
+    <div id="defender-section">
+      <h2 class="position-header">後衛 / Defenders</h2>
+      <div class="row" id="defender-list"></div>
+    </div>
+    
+    <div id="midfielder-section">
+      <h2 class="position-header">中場 / Midfielders</h2>
+      <div class="row" id="midfielder-list"></div>
+    </div>
+    
+    <div id="forward-section">
+      <h2 class="position-header">前鋒 / Forwards</h2>
+      <div class="row" id="forward-list"></div>
     </div>
   </main>
 
-  <footer class="bg-light text-center text-muted py-3 mt-5">
-    <p>&copy; 2025 MK HKER Football Team. All rights reserved.</p>
-  </footer>
+  <div id="site-footer"></div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-  <script id="player-data" type="application/json">
-    [
-      {
-        "number": 7,
-        "name_zh": "張三",
-        "name_en": "Cheung Sam",
-        "position": "前鋒",
-        "photo": "photos/cheung_sam.jpg"
-      },
-      {
-        "number": 10,
-        "name_zh": "李四",
-        "name_en": "Lee See",
-        "position": "中場",
-        "photo": "photos/lee_see.jpg"
-      },
-      {
-        "number": 1,
-        "name_zh": "王五",
-        "name_en": "Wong Ng",
-        "position": "守門員",
-        "photo": "photos/wong_ng.jpg"
-      }
-    ]
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     $(document).ready(function () {
-      const players = JSON.parse(document.getElementById('player-data').textContent);
-      let html = '';
-      players.forEach(player => {
-        html += `
-          <div class="col-md-4 mb-4">
-            <div class="card player-card">
-              <img src="${player.photo || 'photos/default.jpg'}" alt="${player.name_en}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">#${player.number} ${player.name_zh} / ${player.name_en}</h5>
-                <p class="card-text">位置 / Position: ${player.position}</p>
+      // 位置縮寫對照表
+      const positionMap = {
+        'GK': '守門員',
+        'DF': '後衛',
+        'DM': '防守型中場',
+        'CM': '中場',
+        'AM': '進攻型中場',
+        'FW': '前鋒'
+      };
+      
+      // 位置分組映射
+      const positionGroups = {
+        'GK': 'goalkeeper',
+        'DF': 'defender',
+        'DM': 'midfielder',
+        'CM': 'midfielder',
+        'AM': 'midfielder',
+        'FW': 'forward'
+      };
+      
+      // 從外部文件加載球員數據
+      $.getJSON('players.json', function(players) {
+        // 按球員號碼排序
+        players.sort((a, b) => a.number - b.number);
+        
+        // 移除重複的球員 (基於號碼和姓名)
+        const uniquePlayers = [];
+        const uniqueKeys = new Set();
+        
+        players.forEach(player => {
+          const key = `${player.number}-${player.name_en}`;
+          if (!uniqueKeys.has(key)) {
+            uniqueKeys.add(key);
+            uniquePlayers.push(player);
+          }
+        });
+        
+        // 按位置分組
+        const positionedPlayers = {
+          goalkeeper: [],
+          defender: [],
+          midfielder: [],
+          forward: []
+        };
+        
+        // 將球員分配到相應位置組
+        uniquePlayers.forEach(player => {
+          const groupKey = positionGroups[player.position] || 'midfielder'; // 默認放在中場
+          positionedPlayers[groupKey].push(player);
+        });
+        
+        // 渲染每個位置組的球員
+        Object.keys(positionedPlayers).forEach(groupKey => {
+          let html = '';
+          const groupPlayers = positionedPlayers[groupKey];
+          
+          groupPlayers.forEach(player => {
+            // 決定顯示名稱 - 如果沒有中文名，只顯示英文名
+            let nameDisplay = '';
+            if (player.name_zh && player.name_zh.trim() !== '') {
+              nameDisplay = `${player.name_zh} / ${player.name_en}`;
+            } else {
+              nameDisplay = player.name_en;
+            }
+            
+            // 獲取位置的中文翻譯
+            const positionDisplay = positionMap[player.position] ? 
+              `${positionMap[player.position]} / ${player.position}` : 
+              player.position;
+            
+            html += `
+              <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card player-card">
+                  <img src="${player.photo || 'images/dummy.png'}" alt="${player.name_en}" class="card-img-top">
+                  <div class="card-body">
+                    <div class="player-number mb-2">#${player.number}</div>
+                    <h5 class="card-title">${nameDisplay}</h5>
+                    <p class="card-text">位置 / Position: ${positionDisplay}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        `;
+            `;
+          });
+          
+          // 填充相應的列表區域
+          $(`#${groupKey}-list`).html(html);
+          
+          // 如果該位置沒有球員，隱藏整個區段
+          if (groupPlayers.length === 0) {
+            $(`#${groupKey}-section`).hide();
+          } else {
+            $(`#${groupKey}-section`).show();
+          }
+        });
+      }).fail(function() {
+        $('main').html('<div class="col-12 text-center"><p class="text-danger">載入球員資料時發生錯誤</p></div>');
       });
-      $('#player-list').html(html);
     });
+  </script>
+
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+        const page = location.pathname.split('/').pop();
+        document.querySelectorAll('[data-page]').forEach(el => {
+          if (el.getAttribute('data-page') === page) el.classList.add('active');
+        });
+      });
+      
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-footer').innerHTML = html;
+      });
   </script>
 </body>
 </html>
